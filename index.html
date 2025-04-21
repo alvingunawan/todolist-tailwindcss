@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-900 text-gray-100">
+    <main class="mx-5">
+      <section class="container min-w-70 mx-auto max-w-sm shadow-lg bg-gray-800 mt-8 py-8 text-center md:min-w-150 lg:min-w-200">
+        <h1 class="font-bold mb-5 text-2xl">To Do List</h1>
+        <form class="flex flex-col mx-5 mb-3">
+          <input type="text" id="profileInput" class="border-1 rounded-md pl-1 mb-2 focus:outline-none focus:border-teal-200 focus:ring-2" maxlength="25" placeholder="Add Profile Name" />
+          <input type="text" id="taskInput" class="border-1 rounded-md pl-1 mb-2 focus:outline-none focus:border-teal-200 focus:ring-2" maxlength="45" placeholder="Add a Task" />
+          <select name="priority" id="priority" class="text-gray-100 border-1 rounded-md pl-1 mb-2 focus:outline-none focus:border-teal-200 focus:ring-2" aria-placeholder="add priority">
+            <option value="" class="bg-gray-800" selected disabled hidden aria-placeholder="Select Priority">Select Priority</option>
+            <option value="low" class="bg-gray-800">Low</option>
+            <option value="medium" class="bg-gray-800">Medium</option>
+            <option value="high" class="bg-gray-800">High</option>
+          </select>
+          <input type="date" id="dateInput" class="border-1 rounded-md pl-1 mb-2 focus:outline-none focus:border-teal-200 focus:ring-2" maxlength="45" placeholder="Deadline Date" />
+          <button type="button" id="addTask" class="bg-emerald-700 text-white/80 py-1 px-2 rounded-md text-sm mt-3 hover:cursor-pointer hover:opacity-80 focus:outline-none focus:border-black focus:ring-2">Add Task</button>
+        </form>
+
+        <!-- Tombol Tab -->
+        <div class="flex justify-center space-x-4 mb-4 mx-5">
+          <button id="todoTabBtn" class="px-4 py-2 bg-blue-700 text-white rounded-md hover:cursor-pointer hover:opacity-80">Todo</button>
+          <button id="doneTabBtn" class="px-4 py-2 bg-gray-600 text-white rounded-md hover:cursor-pointer hover:opacity-80">Done</button>
+          <button id="DeleteTabBtn" class="px-4 py-2 bg-red-600 text-white rounded-md hover:cursor-pointer hover:opacity-80">Delete All</button>
+        </div>
+
+        <!-- Kontainer Tabel -->
+        <div class="overflow-x-auto">
+          <div id="todoTab" class="w-full">
+            <table class="table-auto min-w-80 mx-5 border-collapse border border-gray-400">
+              <thead>
+                <tr>
+                  <th class="border border-gray-400 px-4 py-2">Profile</th>
+                  <th class="border border-gray-400 px-4 py-2">Date</th>
+                  <th class="border border-gray-400 px-4 py-2">To Do</th>
+                  <th class="border border-gray-400 px-4 py-2">Priority</th>
+                  <th class="border border-gray-400 px-4 py-2">Deadline</th>
+                  <th class="border border-gray-400 px-4 py-2">Status</th>
+                  <th class="border border-gray-400 px-4 py-2">Action</th>
+                </tr>
+              </thead>
+              <tbody id="taskList">
+                <!-- Isi Generate -->
+              </tbody>
+            </table>
+          </div>
+
+          <div id="doneTab" class="hidden w-full">
+            <table class="table-auto min-w-80 mx-5 border-collapse border border-gray-400">
+              <thead>
+                <tr>
+                  <th class="border border-gray-400 px-4 py-2">Profile</th>
+                  <th class="border border-gray-400 px-4 py-2">Date</th>
+                  <th class="border border-gray-400 px-4 py-2">To Do</th>
+                  <th class="border border-gray-400 px-4 py-2">Priority</th>
+                  <th class="border border-gray-400 px-4 py-2">Deadline</th>
+                  <th class="border border-gray-400 px-4 py-2">Status</th>
+                  <th class="border border-gray-400 px-4 py-2">Action</th>
+                </tr>
+              </thead>
+              <tbody id="doneList">
+                <!-- Isi Generate -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container mx-auto text-center">
+        <div>Created by Alvin Gunawan 2025</div>
+        <div>Using TailwindCSS.</div>
+      </div>
+    </footer>
+  </body>
+  <script src="src/script.js"></script>
+</html>
